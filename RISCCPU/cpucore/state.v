@@ -119,7 +119,7 @@ module state( inc_pc, load_acc, load_pc, rd, wr, load_ir,
 	    if (opcode == ADD || opcode == ANDD ||
 	        opcode == XORR || opcode == LDA)
 	      begin
-                {inc_pc, load_acc, load_pc, rd} <= 4'b0101;
+                {inc_pc, load_acc, load_pc, rd} <= 4'b0001;
 	        {wr, load_ir, datactl_ena, halt} <= 4'b0000;
 	      end
 	    else
@@ -159,7 +159,7 @@ module state( inc_pc, load_acc, load_pc, rd, wr, load_ir,
 	      if (opcode == ADD || opcode == ANDD ||
 	          opcode == XORR || opcode == LDA)
 		begin
-                  {inc_pc, load_acc, load_pc, rd} <= 4'b0101;
+                  {inc_pc, load_acc, load_pc, rd} <= 4'b0100;
 	          {wr, load_ir, datactl_ena, halt} <= 4'b0000;
 		end
 	    else
