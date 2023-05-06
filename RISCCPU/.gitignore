@@ -1,4 +1,4 @@
-./csrc 
+csrc 
 *.daidir 
 *.log 
 simv* 
