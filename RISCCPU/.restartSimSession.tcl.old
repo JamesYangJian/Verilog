@@ -1,0 +1,254 @@
+# Begin_DVE_Session_Save_Info
+# DVE restart session
+# Saved on Thu May 4 09:41:37 2023
+# Designs open: 1
+#   Sim: /mnt/hgfs/vpc_share/RISC/RISC
+# Toplevel windows open: 2
+# 	TopLevel.1
+# 	TopLevel.2
+#   Source.1: cputop
+#   Wave.1: 28 signals
+#   Group count = 2
+#   Group Group1 signal count = 1
+#   Group Group2 signal count = 28
+# End_DVE_Session_Save_Info
+
+# DVE version: O-2018.09-SP2_Full64
+# DVE build date: Feb 28 2019 23:39:41
+
+
+#<Session mode="Restart" path=".restartSimSession.tcl" type="Debug">
+
+gui_set_loading_session_type Restart
+gui_continuetime_set
+gui_clear_window -type Wave
+gui_clear_window -type List
+
+# Application preferences
+gui_set_pref_value -key app_default_font -value {Helvetica,10,-1,5,50,0,0,0,0,0}
+gui_src_preferences -tabstop 8 -maxbits 24 -windownumber 1
+#<WindowLayout>
+
+# DVE top-level session
+
+
+# Create and position top-level window: TopLevel.1
+
+set TopLevel.1 TopLevel.1
+
+# Docked window settings
+set HSPane.1 HSPane.1
+set Hier.1 Hier.1
+set DLPane.1 DLPane.1
+set Data.1 Data.1
+set Console.1 Console.1
+set Watch.1 Watch.1
+gui_sync_global -id ${TopLevel.1} -option true
+
+# MDI window settings
+set Source.1 Source.1
+gui_update_layout -id ${Source.1} {{show_state maximized} {dock_state undocked} {dock_on_new_line false}}
+
+# End MDI window settings
+
+
+# Create and position top-level window: TopLevel.2
+
+set TopLevel.2 TopLevel.2
+
+# Docked window settings
+gui_sync_global -id ${TopLevel.2} -option true
+
+# MDI window settings
+set Wave.1 Wave.1
+gui_update_layout -id ${Wave.1} {{show_state maximized} {dock_state undocked} {dock_on_new_line false} {child_wave_left 594} {child_wave_right 1448} {child_wave_colname 295} {child_wave_colvalue 295} {child_wave_col1 0} {child_wave_col2 1}}
+
+# End MDI window settings
+
+
+#</WindowLayout>
+
+#<Database>
+
+gui_set_precision 1ns
+gui_set_time_units 1ns
+#</Database>
+
+# DVE Global setting session: 
+
+
+# Global: Breakpoints
+
+# Global: Bus
+
+# Global: Expressions
+
+# Global: Signal Time Shift
+
+# Global: Signal Compare
+
+# Global: Signal Groups
+
+
+set _session_group_5 Group1
+gui_sg_create "$_session_group_5"
+set Group1 "$_session_group_5"
+
+gui_sg_addsignal -group "$_session_group_5" { cputop.t_cpu.zero }
+
+set _session_group_6 Group2
+gui_sg_create "$_session_group_6"
+set Group2 "$_session_group_6"
+
+gui_sg_addsignal -group "$_session_group_6" { cputop.ir_addr cputop.pc_addr cputop.data cputop.addr cputop.rd cputop.wr cputop.halt cputop.ram_sel cputop.rom_sel cputop.opcode cputop.t_cpu.zero cputop.t_cpu.alu_ena cputop.t_cpu.alu_out cputop.t_cpu.data cputop.t_cpu.accum cputop.fetch cputop.reset_req cputop.clock cputop.mnemonic cputop.IR_addr cputop.PC_addr cputop.t_cpu.control_ena cputop.t_cpu.opcode cputop.t_cpu.load_acc cputop.t_cpu.inc_pc cputop.t_cpu.load_pc cputop.t_cpu.data_ena cputop.t_cpu.load_ir }
+
+# Global: Highlighting
+
+# Global: Stack
+gui_change_stack_mode -mode list
+
+# Global: Watch 'Watch'
+
+gui_watch_page_delete -id Watch -all
+gui_watch_page_add -id Watch
+gui_watch_page_rename -id Watch -name {Watch 1}
+gui_watch_list_add_expr -id Watch -expr {ir_addr[12:0]} -meta cputop.ir_addr -type Wire -nonlocal -scope cputop
+
+gui_watch_list_add_expr -id Watch -expr {pc_addr[12:0]} -meta cputop.pc_addr -type Wire -nonlocal -scope cputop
+
+gui_watch_list_add_expr -id Watch -expr {data[7:0]} -meta cputop.data -type Wire -nonlocal -scope cputop
+
+gui_watch_list_add_expr -id Watch -expr {addr[12:0]} -meta cputop.addr -type Wire -nonlocal -scope cputop
+
+gui_watch_list_add_expr -id Watch -expr rd -meta cputop.rd -type Wire -nonlocal -scope cputop
+
+gui_watch_list_add_expr -id Watch -expr wr -meta cputop.wr -type Wire -nonlocal -scope cputop
+
+gui_watch_list_add_expr -id Watch -expr halt -meta cputop.halt -type Wire -nonlocal -scope cputop
+
+gui_watch_list_add_expr -id Watch -expr ram_sel -meta cputop.ram_sel -type Wire -nonlocal -scope cputop
+
+gui_watch_list_add_expr -id Watch -expr rom_sel -meta cputop.rom_sel -type Wire -nonlocal -scope cputop
+
+gui_watch_list_add_expr -id Watch -expr {opcode[2:0]} -meta cputop.opcode -type Wire -nonlocal -scope cputop
+
+gui_watch_list_add_expr -id Watch -expr fetch -meta cputop.fetch -type {} -nonlocal -scope cputop
+
+gui_watch_list_add_expr -id Watch -expr reset_req -meta cputop.reset_req -type {} -nonlocal -scope cputop
+
+gui_watch_list_add_expr -id Watch -expr clock -meta cputop.clock -type {} -nonlocal -scope cputop
+
+gui_watch_list_add_expr -id Watch -expr {mnemonic[24:0]} -meta cputop.mnemonic -type {} -nonlocal -scope cputop
+
+gui_watch_list_add_expr -id Watch -expr {IR_addr[12:0]} -meta cputop.IR_addr -type {} -nonlocal -scope cputop
+
+gui_watch_list_add_expr -id Watch -expr {PC_addr[12:0]} -meta cputop.PC_addr -type {} -nonlocal -scope cputop
+
+gui_watch_page_add -id Watch
+gui_watch_page_rename -id Watch -name {Watch 2}
+gui_watch_page_add -id Watch
+gui_watch_page_rename -id Watch -name {Watch 3}
+
+# Post database loading setting...
+
+# Save global setting...
+
+# Wave/List view global setting
+gui_cov_show_value -switch false
+
+# Close all empty TopLevel windows
+foreach __top [gui_ekki_get_window_ids -type TopLevel] {
+    if { [llength [gui_ekki_get_window_ids -parent $__top]] == 0} {
+        gui_close_window -window $__top
+    }
+}
+gui_set_loading_session_type noSession
+# DVE View/pane content session: 
+
+
+# Hier 'Hier.1'
+gui_show_window -window ${Hier.1}
+gui_list_set_filter -id ${Hier.1} -list { {Package 1} {All 0} {Process 1} {VirtPowSwitch 0} {UnnamedProcess 1} {UDP 0} {Function 1} {Block 1} {SrsnAndSpaCell 0} {OVA Unit 1} {LeafScCell 1} {LeafVlgCell 1} {Interface 1} {LeafVhdCell 1} {$unit 1} {NamedBlock 1} {Task 1} {VlgPackage 1} {ClassDef 1} {VirtIsoCell 0} }
+gui_list_set_filter -id ${Hier.1} -text {*}
+gui_change_design -id ${Hier.1} -design Sim
+catch {gui_list_expand -id ${Hier.1} cputop}
+catch {gui_list_select -id ${Hier.1} {cputop.t_cpu}}
+gui_view_scroll -id ${Hier.1} -vertical -set 0
+gui_view_scroll -id ${Hier.1} -horizontal -set 0
+
+# Data 'Data.1'
+gui_list_set_filter -id ${Data.1} -list { {Buffer 1} {Input 1} {Others 1} {Linkage 1} {Output 1} {LowPower 1} {Parameter 1} {All 1} {Aggregate 1} {LibBaseMember 1} {Event 1} {Assertion 1} {Constant 1} {Interface 1} {BaseMembers 1} {Signal 1} {$unit 1} {Inout 1} {Variable 1} }
+gui_list_set_filter -id ${Data.1} -text {*}
+gui_list_show_data -id ${Data.1} {cputop.t_cpu}
+gui_show_window -window ${Data.1}
+catch { gui_list_select -id ${Data.1} {cputop.t_cpu.accum }}
+gui_view_scroll -id ${Data.1} -vertical -set 0
+gui_view_scroll -id ${Data.1} -horizontal -set 0
+gui_view_scroll -id ${Hier.1} -vertical -set 0
+gui_view_scroll -id ${Hier.1} -horizontal -set 0
+
+# Source 'Source.1'
+gui_src_value_annotate -id ${Source.1} -switch false
+gui_set_env TOGGLE::VALUEANNOTATE 0
+gui_open_source -id ${Source.1}  -replace -active cputop /mnt/hgfs/vpc_share/RISC/./cputop.v
+gui_view_scroll -id ${Source.1} -vertical -set 105
+gui_src_set_reusable -id ${Source.1}
+
+# Watch 'Watch.1'
+gui_watch_page_activate -id ${Watch.1} -page {Watch 1}
+gui_list_set_filter -id ${Watch.1} -page {Watch 1} -list { {static 1} {randc 1} {public 1} {Parameter 1} {protected 1} {OtherTypes 1} {array 1} {local 1} {class 1} {AllTypes 1} {rand 1} {constraint 1} }
+gui_list_set_filter -id ${Watch.1} -page {Watch 1} -text {*}
+gui_watch_list_scroll_to -id ${Watch.1} -horz 0 -vert 0
+gui_watch_page_activate -id ${Watch.1} -page {Watch 2}
+gui_list_set_filter -id ${Watch.1} -page {Watch 2} -list { {static 1} {randc 1} {public 1} {Parameter 1} {protected 1} {OtherTypes 1} {array 1} {local 1} {class 1} {AllTypes 1} {rand 1} {constraint 1} }
+gui_list_set_filter -id ${Watch.1} -page {Watch 2} -text {*}
+gui_watch_page_activate -id ${Watch.1} -page {Watch 3}
+gui_list_set_filter -id ${Watch.1} -page {Watch 3} -list { {static 1} {randc 1} {public 1} {Parameter 1} {protected 1} {OtherTypes 1} {array 1} {local 1} {class 1} {AllTypes 1} {rand 1} {constraint 1} }
+gui_list_set_filter -id ${Watch.1} -page {Watch 3} -text {*}
+gui_watch_page_activate -id ${Watch.1} -page {Watch 1}
+gui_view_scroll -id ${Watch.1} -vertical -set 0
+gui_view_scroll -id ${Watch.1} -horizontal -set 0
+
+# View 'Wave.1'
+gui_wv_sync -id ${Wave.1} -switch false
+set groupExD [gui_get_pref_value -category Wave -key exclusiveSG]
+gui_set_pref_value -category Wave -key exclusiveSG -value {false}
+set origWaveHeight [gui_get_pref_value -category Wave -key waveRowHeight]
+gui_list_set_height -id Wave -height 25
+set origGroupCreationState [gui_list_create_group_when_add -wave]
+gui_list_create_group_when_add -wave -disable
+gui_wv_zoom_timerange -id ${Wave.1} 0 7109
+gui_list_add_group -id ${Wave.1} -after {New Group} {Group2}
+gui_list_select -id ${Wave.1} {cputop.t_cpu.accum }
+gui_seek_criteria -id ${Wave.1} {Any Edge}
+
+
+
+gui_set_env TOGGLE::DEFAULT_WAVE_WINDOW ${Wave.1}
+gui_set_pref_value -category Wave -key exclusiveSG -value $groupExD
+gui_list_set_height -id Wave -height $origWaveHeight
+if {$origGroupCreationState} {
+	gui_list_create_group_when_add -wave -enable
+}
+if { $groupExD } {
+ gui_msg_report -code DVWW028
+}
+gui_list_set_filter -id ${Wave.1} -list { {Buffer 1} {Input 1} {Others 1} {Linkage 1} {Output 1} {Parameter 1} {All 1} {Aggregate 1} {LibBaseMember 1} {Event 1} {Assertion 1} {Constant 1} {Interface 1} {BaseMembers 1} {Signal 1} {$unit 1} {Inout 1} {Variable 1} }
+gui_list_set_filter -id ${Wave.1} -text {*}
+gui_list_set_insertion_bar  -id ${Wave.1} -group Group2  -item {cputop.t_cpu.accum[7:0]} -position below
+
+gui_view_scroll -id ${Wave.1} -vertical -set 0
+gui_show_grid -id ${Wave.1} -enable false
+# Restore toplevel window zorder
+# The toplevel window could be closed if it has no view/pane
+if {[gui_exist_window -window ${TopLevel.1}]} {
+	gui_set_active_window -window ${TopLevel.1}
+	gui_set_active_window -window ${Source.1}
+	gui_set_active_window -window ${DLPane.1}
+}
+if {[gui_exist_window -window ${TopLevel.2}]} {
+	gui_set_active_window -window ${TopLevel.2}
+	gui_set_active_window -window ${Wave.1}
+}
+#</Session>
+

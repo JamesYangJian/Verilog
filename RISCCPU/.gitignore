@@ -1,0 +1,10 @@
+./csrc 
+*.daidir 
+*.log 
+simv* 
+*.key 
+*.vpd 
+DVEfiles 
+*.vdb 
+*.fsdb
+RISC
